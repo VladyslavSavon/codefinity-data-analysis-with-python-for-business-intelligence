@@ -3,9 +3,9 @@ def summarize_products(sales_records):
     for row in sales_records:
         product = row['product']
         if product not in summary:
-            summary[product] = {'total_units': 0, 'total_revenue': 0}
-        summary[product]['total_units'] += row['units_sold']
-        summary[product]['total_revenue'] += row['revenue']
+            summary[product] = {'units_sold': 0, 'revenue': 0}
+        summary[product]['units_sold'] += row['units_sold']
+        summary[product]['revenue'] += row['revenue']
     return summary
 
 sales_data = [
@@ -17,4 +17,4 @@ sales_data = [
 ]
 summary = summarize_products(sales_data)
 for product, stats in summary.items():
-    print(f"{product}: {stats['total_units']} units, ${stats['total_revenue']} revenue")
+    print(f"{product}: {stats['units_sold']} units, ${stats['revenue']} revenue")
