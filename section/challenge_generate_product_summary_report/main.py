@@ -5,7 +5,7 @@ def generate_product_report(summary_dict):
         line = f"Product: {product}, Units Sold: {data['units_sold']}, Revenue: ${data['revenue']:.2f}"
         lines.append(line)
         total_revenue += data ['revenue']
-    total_line = f'Total revenue:${total_revenue:.2f}'
+    total_line = f'Total Revenue: ${total_revenue:.2f}'
     lines.append(total_line)
     report = '\n'.join(lines)
     return report
